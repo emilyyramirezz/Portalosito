@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Quicksand:wght@300..700&family=Ribeye&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fadadd;
+    z-index: -1;
+}
+
+.Encabezado {
+    height: 70px;
+    background: #f1c5c9;
+    display: flex;
+    justify-content: space-between;
+}
+.menu {
+    margin-right: 18px;
+    line-height: 60px;
+}
+
+.carusel-inner img{
+    height: 78vh;
+}
+/* Estilos generales para el carrusel */
+.intermedio {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px;
+    max-width: 900px; /* Limita el ancho máximo del carrusel */
+    margin: 0 auto; /* Centrar el carrusel */
+}
+
+.carousel-inner img {
+    max-height: 500px; /* Altura máxima de las imágenes */
+    object-fit: cover; /* Asegura que las imágenes llenen el espacio de forma proporcional */
+}
+.carousel-indicators button {
+    background-color: #666; /* Color gris suave para los botones */
+    border-radius: 50%; /* Botones circulares */
+    width: 12px;
+    height: 12px;
+}
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    .carousel-inner img {
+        max-height: 300px; /* Disminuye la altura de las imágenes en pantallas más pequeñas */
+    }
+}
+.contenedor-tarjetas {
+    display: flex;
+    justify-content: space-between; /* Coloca una tarjeta a la izquierda y otra a la derecha */
+    max-width: 1360px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+} 
+#btn{
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 10px;
+    height: 35px;
+    background: #395090;
+    color: white;
+    border: 2px dotted white;
+}
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.card-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    display: flex;
+    flex-shrink: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: start;
+    width: 300px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se muevan a la siguiente línea si es necesario */
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px; /* Limita el ancho máximo */
+}
+.card-content h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.card-content p {
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    font-size: 0.9em;
+}
+
+.card-content a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.card-content a:hover {
+    color: #004080;
+}
+.tarjetita {
+    width: 80%;
+    max-width: 950px;
+    height: 450px;
+    background: #2a9ea2;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto; /* Centra la tarjeta */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Agrega sombra para resaltar */
+}
+.container {
+    min-height: 100vh; /* vh se refiere al viewport height, o altura de la ventana */
+}
+
+.styled-link {
+    position: relative;
+    display: inline-block;
+    font-family: "Ribeye", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+    color: #3498db;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.styled-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #8747a9;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.styled-link:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.styled-link:hover {
+    color: #8747a9;
+}
+
+.text-content h3 {
+    font-family: "Ribeye", serif;
+  font-weight: 400;
+  font-style: normal
+}
+
+.text-content p {
+    font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+    font-size: 18px;
+    color: black;
+}
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .Encabezado {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px;
+    }
+    
+    .menu {
+        margin: 0;
+        line-height: 1.5;
+    }
+    
+    .container,
+    .contenedor,
+    .contenedor-tarjetas,
+    .contact-wrapper,
+    .card-container {
+        max-width: 100%;
+        padding: 1em;
+        margin: 0 auto;
+    }
+    
+    .contact-form form {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form form .block {
+        grid-column: 1 / 2;
+    }
+    
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .tarjetita {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 600px) and (max-width: 768px) {
+    .Encabezado {
+        padding: 15px;
+    }
+
+    .contenedor,
+    .container,
+    .card-container {
+        max-width: 90%;
+    }
+    
+    .contenedor-tarjetas {
+        flex-direction: column;
+    }
+}
+@media (max-width: 600px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
